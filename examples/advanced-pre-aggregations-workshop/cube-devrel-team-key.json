@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "cube-devrel-team",
+    "private_key_id": "4b9ea60c5ed2fed5b045bbcd470f1f4459788aeb",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCutuqPCZtnjNvd\nmcxvz4imjLiEvDvN5wTZFwLNZCHZ5pkwfRkgaRi0fwUWYyN+GJwe54iL6UBT5eB+\nDbMLDO1eEl48F0oQ86oQviUMpr0VpDb22UUGRtJw33q/Pm0pxpHpDT0diZwqdJd3\nP3SYzTITu1tAPUHiCMsuPAwFmgL7j4aXdOq11tSP40YoEm08t7+ecXbpmSg5z6dr\nsR/Vx//l4+NF0wlmMgcSUdftlcmbPR4h8dZjfPxGlx9mORDPzmMT9QMs7MHHJBI+\nAhRuQb58b+Yrn9xzd9VSS2NURDjis1doByPiimQcWrsGy+SxVUiYdA3+pGzRhrzj\naDCEJO/xAgMBAAECggEABdUDSsJhAU7kE/ygpLwtF+orSqWslWNNzSAF2ZdVw0ao\nUcRgmgKyxBZYCXbxELIqRqR8nAxYN7S9Dq15uY0KlhD6O6VHX/4nl3wmvnUJFiIv\ngi6fLZDK+4uU4bISxh85Gv90d8+dJT7+bgjx5RvhvQ43Az5IPGRba/ADMrirutFH\nI/ixpaGnSwFt4ffV1kxiX8Dff/513YA0JmKBkb7mnxcgHNBPeGx81admyFbNau6N\nU3roGaDm1pQ/1njnH/PUCCKKp79HWTAfDxp7YNVOB2jTRElAEgOyXNpa124j6VKG\nlkqn1E3Gq0NhsVlxNr+ShgSwYyadWquHu94xBWpg8QKBgQDuEAL0Q37eXlVCpL0o\nmtStO2/HLvSL3Ch38sToIpXedfujs+KgUH6Mi6+rEbjtami9UfnVchOZWHgcXJ7Q\nOTWUqB21hzIbymcij0i15u473bi/TzpQTqFhh/J0cchEtq35aRShuGCwjyz+SMIU\nJuiU6v7blEEmjXpRVNNch4NI3QKBgQC74PwNMDs5Az9Zv7+Lc99Tlu806bqCjEv9\nb6PxnWAJkO+2vgGKRX0wtX3jFruxqmqj5l7Lyt97kKa0tLc0C4tF3RaEutbgwSi4\nsivgCFGnb8TDk4LMtTBvb3TH00YVs9RisrM5xfZVOqKHLca8RiYvak161Jo28SJV\nZMZrGu6IJQKBgD9x8PecTWGCDoL2WJtLuEZ6wq147B+iCv78qlGbdgmVs/zK4ikL\nis52I9kZnglYBJYAFO83udVyaIBWhtTDim4V5+ULJOWXKaliOmSQKQm3a5dAzC++\n5O+TRaCW+mKltPP1d1QqSUqEvd7/EQpB3FZj0ow+lKZrqh+m1bWhP/HZAoGBAJLb\nAsngSHqBElS58CQ2F3vEQAhRJguDVKauTCzBQd9YXjeuf4+wT3Hye4s1KtNuDNs+\naBzN4DA62kPn+kgBOgULEt3/GZUnBwiPpIICnqjNUbU6KYSPoGOKcHL9rwupvDrF\nyhg/qBPouEAHxQ9HmfN4GUYIxt5pT9gF5J61t3vNAoGAIMy307L4tcGEl8j891EW\n/DIHh2AhMN8cmMR1drD+eEsnjwSJPJ43PRXEcLkD8IDHw7BihAEqIOP9piuppQ2i\nhbjLYKlEoZAet8k0xIb4Ti/Oug4ErjWuYT7JCBMyOX/jzvf4hraJw3+z3+mH4Rud\n7GhbM2UZDy2cKcglsS+5NCE=\n-----END PRIVATE KEY-----\n",
+    "client_email": "adv-pre-agg-wrkshp@cube-devrel-team.iam.gserviceaccount.com",
+    "client_id": "118044717505088493012",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adv-pre-agg-wrkshp%40cube-devrel-team.iam.gserviceaccount.com"
+}
