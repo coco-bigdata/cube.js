@@ -85,68 +85,50 @@ cube(`Order`, {
     //   ],
     //   timeDimension: Order.oOrderdate,
     //   granularity: `day`,
-    //   partitionGranularity: `day`,
-    //   refreshKey: {
-    //     every: `1 day`,
-    //     incremental: true,
-    //     updateWindow: `7 day`
-    //   }
-    // }
+    //   partitionGranularity: `day`
+    // },
 
     /** Step 5.
      * Cardinality
      * Break down complex pre-aggregations
      * Create pre-aggregations with definitions that fully match queries
      */
-    dailyOrderCountPerCustomer: {
-      measures: [
-        Order.count,
-      ],
-      dimensions: [
-        Customer.cName
-      ],
-      timeDimension: Order.oOrderdate,
-      granularity: `day`,
-      partitionGranularity: `day`,
-      refreshKey: {
-        every: `1 day`,
-        incremental: true,
-        updateWindow: `7 day`
-      }
-    },
-    dailyOrderPriceSumPerCustomer: {
-      measures: [
-        Order.totalPriceSum
-      ],
-      dimensions: [
-        Customer.cName
-      ],
-      timeDimension: Order.oOrderdate,
-      granularity: `day`,
-      partitionGranularity: `day`,
-      refreshKey: {
-        every: `1 day`,
-        incremental: true,
-        updateWindow: `7 day`
-      }
-    },
-    dailyOrdersPerCustomer: {
-      measures: [
-        Order.count,
-        Order.totalPriceSum
-      ],
-      dimensions: [
-        Customer.cName
-      ],
-      timeDimension: Order.oOrderdate,
-      granularity: `day`,
-      partitionGranularity: `day`,
-      refreshKey: {
-        every: `1 day`,
-        incremental: true,
-        updateWindow: `7 day`
-      }
-    }
+    // dailyOrdersPerCustomer: {
+    //   measures: [
+    //     Order.count,
+    //     Order.totalPriceSum
+    //   ],
+    //   dimensions: [
+    //     Customer.cName,
+    //     Customer.cAcctbal
+    //   ],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`,
+    //   partitionGranularity: `day`
+    // },
+    /** ==>  */
+    // dailyOrderCountPerCustomer: {
+    //   measures: [
+    //     Order.count,
+    //   ],
+    //   dimensions: [
+    //     Customer.cName
+    //   ],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`,
+    //   partitionGranularity: `day`
+    // },
+    // dailyOrderPriceAvgPerCustomer: {
+    //   measures: [
+    //     Order.totalPriceAvg
+    //   ],
+    //   dimensions: [
+    //     Customer.cName
+    //   ],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`,
+    //   partitionGranularity: `day`
+    // },
   },
 
   joins: {
