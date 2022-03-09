@@ -57,7 +57,7 @@ cube(`Order`, {
      * Step 3.
      * Using dedicated pre-aggregations for large and complex queries
      */
-    // This is going to take ages to build...
+    /** This is going to take ages to build...  */
     // dailyOrdersPerCustomer: {
     //   measures: [
     //     Order.count,
