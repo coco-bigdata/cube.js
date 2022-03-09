@@ -51,10 +51,34 @@ cube(`Order`, {
     //     Order.clerkCountDistinct
     //   ]
     // },
+
+
+    /**
+     * Step 3.
+     * Using dedicated pre-aggregations for large and complex queries
+     */
+    dailyOrdersPerCustomer: {
+      measures: [
+        Order.count,
+        Order.totalPriceSum
+      ],
+      dimensions: [
+        Customer.cName
+      ],
+      timeDimension: Order.oOrderdate,
+      granularity: `day`
+    }
   },
 
   joins: {
-      
+    /**
+     * Step 3.
+     * Introducing joins for large queries and dedicated pre-aggregations
+     */
+    Customer: {
+      relationship: `belongsTo`,
+      sql: `${CUBE.oCustkey} = ${Customer.cCustKey}`,
+    },
   },
 
   measures: {
@@ -104,9 +128,32 @@ cube(`Order`, {
     //   sql: `${CUBE}.O_CLERK`,
     //   type: `countDistinct`
     // },
+
+    /**
+     * Step 3.
+     * Using dedicated pre-aggregations for large and complex queries
+     */
+    totalPriceAvg: {
+      sql: `${CUBE.totalPriceSum} / ${CUBE.count}`,
+      type: `number`,
+    },
+    totalPriceSum: {
+      sql: `${CUBE}.O_TOTALPRICE`,
+      type: `sum`,
+    },
   },
 
   dimensions: {
+    /**
+     * Step 3.
+     * Introducing joins for large queries and dedicated pre-aggregations
+     */
+    oCustkey: {
+      sql: `${CUBE}.O_CUSTKEY`,
+      type: `number`,
+      primaryKey: true
+    },
+
     oOrderstatus: {
       sql: `${CUBE}.O_ORDERSTATUS`,
       type: `string`
