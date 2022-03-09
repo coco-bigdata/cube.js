@@ -57,6 +57,79 @@ cube(`Order`, {
      * Step 3.
      * Using dedicated pre-aggregations for large and complex queries
      */
+    // This is going to take ages to build...
+    // dailyOrdersPerCustomer: {
+    //   measures: [
+    //     Order.count,
+    //     Order.totalPriceSum
+    //   ],
+    //   dimensions: [
+    //     Customer.cName
+    //   ],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`
+    // }
+
+    /** Step 4.
+     * Partitioning
+     * Will partition the data into tables per year
+     * Still an issue with tables that have >100k rows
+     */
+    // dailyOrdersPerCustomer: {
+    //   measures: [
+    //     Order.count,
+    //     Order.totalPriceSum
+    //   ],
+    //   dimensions: [
+    //     Customer.cName
+    //   ],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`,
+    //   partitionGranularity: `day`,
+    //   refreshKey: {
+    //     every: `1 day`,
+    //     incremental: true,
+    //     updateWindow: `7 day`
+    //   }
+    // }
+
+    /** Step 5.
+     * Cardinality
+     * Break down complex pre-aggregations
+     * Create pre-aggregations with definitions that fully match queries
+     */
+    dailyOrderCountPerCustomer: {
+      measures: [
+        Order.count,
+      ],
+      dimensions: [
+        Customer.cName
+      ],
+      timeDimension: Order.oOrderdate,
+      granularity: `day`,
+      partitionGranularity: `day`,
+      refreshKey: {
+        every: `1 day`,
+        incremental: true,
+        updateWindow: `7 day`
+      }
+    },
+    dailyOrderPriceSumPerCustomer: {
+      measures: [
+        Order.totalPriceSum
+      ],
+      dimensions: [
+        Customer.cName
+      ],
+      timeDimension: Order.oOrderdate,
+      granularity: `day`,
+      partitionGranularity: `day`,
+      refreshKey: {
+        every: `1 day`,
+        incremental: true,
+        updateWindow: `7 day`
+      }
+    },
     dailyOrdersPerCustomer: {
       measures: [
         Order.count,
@@ -66,7 +139,13 @@ cube(`Order`, {
         Customer.cName
       ],
       timeDimension: Order.oOrderdate,
-      granularity: `day`
+      granularity: `day`,
+      partitionGranularity: `day`,
+      refreshKey: {
+        every: `1 day`,
+        incremental: true,
+        updateWindow: `7 day`
+      }
     }
   },
 
