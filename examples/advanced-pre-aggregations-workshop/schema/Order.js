@@ -129,6 +129,52 @@ cube(`Order`, {
     //   granularity: `day`,
     //   partitionGranularity: `day`
     // },
+
+    /**
+     * Step 6
+     * Refresh tuning
+     */
+    // dailyOrdersPerCustomer: {
+    //   measures: [
+    //     Order.count,
+    //     Order.totalPriceSum
+    //   ],
+    //   dimensions: [
+    //     Customer.cName,
+    //     Customer.cAcctbal
+    //   ],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`,
+    //   partitionGranularity: `day`,
+    //   refreshKey: {
+    //     /**
+    //      * Option 1 
+    //      * Interval refresh key.
+    //      * Defaul value is 1 hour.
+    //      * Refreshes pre-aggregations based on a time interval.
+    //      */
+    //     // every: `1 minute`, // This will refresh every minute
+    //     /**
+    //      * Option 2
+    //      * Refreshes pre-aggregations based on a CRON string.
+    //      */
+    //     // every: `* * * * *`, // This will refresh every minute
+    //     /**
+    //      * Option 3
+    //      * Custom refresh check SQL
+    //      * MAX(updated_at_timestamp) is a viable option
+    //      * Examining a metadata table to see when it last ran
+    //      * 
+    //      * The default values for custom SQL refreshKey checks are:
+    //      * => every: '2 minute' for BigQuery, Athena, Snowflake, and Presto
+    //      * => every: '10 second' for all other databases
+    //      */
+    //     sql: `SELECT MAX(O_UPDATEDAT) FROM tpc_h.order;`,
+    //     every: `1 minute`
+    //   },
+    // },
+
+    //////
   },
 
   joins: {
