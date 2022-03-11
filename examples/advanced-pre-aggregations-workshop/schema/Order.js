@@ -174,7 +174,36 @@ cube(`Order`, {
     //   },
     // },
 
-    //////
+    /**
+     * Step 7
+     * Rollup-joins
+     */
+    /** Orders Rollup */
+    ordersRollup: {
+      measures: [
+        Order.count,
+      ],
+      dimensions: [
+        Order.oCustkey,
+        Order.oOrderstatus,
+      ],
+      timeDimension: Order.oOrderdate,
+      granularity: `day`,
+      partitionGranularity: `day`
+    },
+    /** Join Orders Rollup with Customers Rollup */
+    ordersCustomersRollupJoin: {
+      type: `rollupJoin`,
+      measures: [Order.count],
+      dimensions: [Customer.cName],
+      timeDimension: Order.oOrderdate,
+      granularity: `day`,
+      partitionGranularity: `day`,
+      rollups: [
+        Customer.customersRollup,
+        Order.ordersRollup,
+      ],
+    },
   },
 
   joins: {

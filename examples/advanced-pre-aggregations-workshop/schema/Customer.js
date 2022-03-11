@@ -2,8 +2,17 @@ cube(`Customer`, {
   sql: `SELECT * FROM tpc_h.customer`,
   
   preAggregations: {
-    // Pre-Aggregations definitions go here
-    // Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started  
+    /**
+     * Step 7
+     * Rollup-joins
+     */
+    /** Customers Rollup */
+    customersRollup: {
+      dimensions: [
+        Customer.cCustKey,
+        Customer.cName,
+      ],
+    },
   },
   
   joins: {
