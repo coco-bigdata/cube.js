@@ -7,12 +7,12 @@ cube(`Customer`, {
      * Rollup-joins
      */
     /** Customers Rollup */
-    customersRollup: {
-      dimensions: [
-        Customer.cCustKey,
-        Customer.cName,
-      ],
-    },
+    // customersRollup: {
+    //   dimensions: [
+    //     Customer.cCustKey,
+    //     Customer.cName,
+    //   ],
+    // },
   },
   
   joins: {

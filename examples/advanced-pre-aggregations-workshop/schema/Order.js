@@ -179,31 +179,38 @@ cube(`Order`, {
      * Rollup-joins
      */
     /** Orders Rollup */
-    ordersRollup: {
-      measures: [
-        Order.count,
-      ],
-      dimensions: [
-        Order.oCustkey,
-        Order.oOrderstatus,
-      ],
-      timeDimension: Order.oOrderdate,
-      granularity: `day`,
-      partitionGranularity: `day`
-    },
+    // ordersRollup: {
+    //   measures: [
+    //     Order.count,
+    //   ],
+    //   dimensions: [
+    //     Order.oCustkey,
+    //     Order.oOrderstatus,
+    //   ],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`,
+    //   partitionGranularity: `day`,
+    //   indexes: {
+    //     customerIndex: {
+    //       columns: [
+    //         Order.oCustkey,
+    //       ],
+    //     },
+    //   },
+    // },
     /** Join Orders Rollup with Customers Rollup */
-    ordersCustomersRollupJoin: {
-      type: `rollupJoin`,
-      measures: [Order.count],
-      dimensions: [Customer.cName],
-      timeDimension: Order.oOrderdate,
-      granularity: `day`,
-      partitionGranularity: `day`,
-      rollups: [
-        Customer.customersRollup,
-        Order.ordersRollup,
-      ],
-    },
+    // ordersCustomersRollupJoin: {
+    //   type: `rollupJoin`,
+    //   measures: [Order.count],
+    //   dimensions: [Customer.cName],
+    //   timeDimension: Order.oOrderdate,
+    //   granularity: `day`,
+    //   partitionGranularity: `day`,
+    //   rollups: [
+    //     Customer.customersRollup,
+    //     Order.ordersRollup,
+    //   ],
+    // },
   },
 
   joins: {
